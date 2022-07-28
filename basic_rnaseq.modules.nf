@@ -16,6 +16,10 @@ log.info """\
     """
     .stripIndent()
 
+include { INDEX } from './modules/index.nf'
+include { QUANTIFICATION } from './modules/quantnf'
+include { FASTQC } from './modules/fastqc.nf'
+include { MULTIQC } from './modules/multiqc.nf'
 
 
 workflow {
