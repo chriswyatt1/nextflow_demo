@@ -30,7 +30,7 @@ workflow {
 
 	read_pairs_ch = Channel.fromFilePairs(params.reads)
 
-	quant_ch = QUANTIFICATION(index_ch, read_pairs_ch)
+	quant_ch = QUANTIFICATION(index_ch.first(), read_pairs_ch)
 
     fastqc_ch = FASTQC(read_pairs_ch) 
 
